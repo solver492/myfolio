@@ -1,0 +1,145 @@
+export type ProjectCategory = 'DevOps & Cloud' | 'IA & Automatisation' | 'Développement Web' | 'Mobile & Apps';
+export type ProjectStatus = 'Production' | 'En développement' | 'Archivé' | 'Réalisé';
+
+export interface Project {
+  id: string;
+  name: string;
+  category: ProjectCategory;
+  description: string;
+  longDescription?: string;
+  stack: string[];
+  icon: string;
+  screenshots: string[];
+  github?: string;
+  live?: string;
+  status: ProjectStatus;
+}
+
+export const projects: Project[] = [
+  {
+    id: '01',
+    name: 'Gestion Immo',
+    category: 'DevOps & Cloud',
+    description: 'Plateforme CRM immobilière avec automatisation leads, gestion locative et vitrine publique',
+    longDescription: 'Solution complète de gestion immobilière intégrant un CRM puissant, un système d\'automatisation des leads entrants, une interface de gestion locative et une vitrine publique moderne. Déployée sur infrastructure Docker avec Cloudflare CDN pour des performances optimales.',
+    stack: ['React', 'Node.js', 'Docker', 'Supabase', 'Cloudflare', 'Nginx'],
+    icon: '🏠',
+    screenshots: [],
+    github: '',
+    live: 'movia.immo',
+    status: 'Production',
+  },
+  {
+    id: '02',
+    name: 'Agent Core / AI Edge',
+    category: 'IA & Automatisation',
+    description: 'App Android multi-instance WhatsApp avec agents IA intégrés + extension Telegram',
+    longDescription: 'Application Android révolutionnaire permettant la gestion multi-instance WhatsApp avec intégration d\'agents IA pour l\'automatisation des réponses, la qualification des leads et la gestion des conversations. Extension Telegram pour une couverture multi-plateforme.',
+    stack: ['Python', 'Node.js', 'LLM', 'Android', 'MCP', 'WhatsApp API', 'Telegram Bot API'],
+    icon: '🤖',
+    screenshots: [],
+    status: 'En développement',
+  },
+  {
+    id: '03',
+    name: 'Agent AI VPS',
+    category: 'DevOps & Cloud',
+    description: 'Infrastructure LLM self-hosted sur VPS Hostinger avec backend automation',
+    longDescription: 'Infrastructure complète pour l\'hébergement de modèles de langage (LLM) en self-hosted sur VPS Hostinger. Inclut le déploiement automatisé, le monitoring, le load balancing et une API REST pour l\'intégration dans d\'autres projets.',
+    stack: ['Docker', 'Nginx', 'LLM', 'Hostinger', 'Cloudflare', 'Python', 'FastAPI'],
+    icon: '🐳',
+    screenshots: [],
+    status: 'Production',
+  },
+  {
+    id: '04',
+    name: 'Prompt Master E-com',
+    category: 'IA & Automatisation',
+    description: 'Plateforme e-commerce multi-boutiques Maroc avec automatisation publication et module Spy Expert',
+    longDescription: 'Plateforme e-commerce conçue pour le marché marocain, permettant la gestion de plusieurs boutiques depuis une interface unifiée. Module d\'automatisation des publications sur Facebook et Instagram, avec un module "Spy Expert" pour l\'analyse de la concurrence.',
+    stack: ['React', 'Node.js', 'Facebook API', 'Instagram API', 'MongoDB', 'Redis'],
+    icon: '🛒',
+    screenshots: [],
+    status: 'En développement',
+  },
+  {
+    id: '05',
+    name: 'Vlad Browser',
+    category: 'Mobile & Apps',
+    description: 'Navigateur mobile IA on-device avec contrôle d\'écran et LLM embarqué',
+    longDescription: 'Navigateur Android nouvelle génération intégrant un LLM embarqué pour le traitement on-device. Fonctionnalités de contrôle d\'écran par IA, résumé automatique des pages, assistance contextuelle et navigation intelligente sans connexion serveur.',
+    stack: ['Android', 'LiteRT', 'Google AI Edge', 'Kotlin', 'TensorFlow Lite'],
+    icon: '🌐',
+    screenshots: [],
+    status: 'En développement',
+  },
+  {
+    id: '06',
+    name: 'Gestion Déménagement',
+    category: 'Développement Web',
+    description: 'Application complète de gestion de services de déménagement : planification, équipes, véhicules, devis client et suivi en temps réel.',
+    longDescription: 'Application web complète pour les entreprises de déménagement. Gestion des plannings d\'équipes, suivi de flotte de véhicules, génération de devis automatique, portail client avec suivi en temps réel du déménagement et tableau de bord analytique.',
+    stack: ['React', 'Node.js', 'MongoDB', 'Docker'],
+    icon: '🚚',
+    screenshots: [],
+    github: '',
+    live: '',
+    status: 'Réalisé',
+  },
+  {
+    id: '07',
+    name: 'Gestion Centre de Beauté',
+    category: 'Développement Web',
+    description: 'Plateforme de gestion pour centres de beauté : rendez-vous, fiches clients, services, paiements et tableau de bord statistiques.',
+    longDescription: 'Solution SaaS complète pour les centres de beauté. Système de réservation en ligne, gestion des fiches clients avec historique des soins, catalogue de services personnalisable, intégration paiements, et reporting avancé pour le suivi des performances.',
+    stack: ['React', 'Supabase', 'Node.js', 'Tailwind'],
+    icon: '💅',
+    screenshots: [],
+    github: '',
+    live: '',
+    status: 'Réalisé',
+  },
+  {
+    id: '08',
+    name: 'Gestion Pharma',
+    category: 'Développement Web',
+    description: 'Système de gestion pharmaceutique : stock médicaments, ordonnances, alertes péremption, clients et rapports de vente.',
+    longDescription: 'Logiciel de gestion pharmaceutique complet. Suivi des stocks de médicaments avec alertes de réapprovisionnement et de péremption, gestion des ordonnances, fichier clients, intégration caisse, et rapports de vente détaillés pour les pharmacies.',
+    stack: ['React', 'PHP', 'MySQL', 'Docker'],
+    icon: '💊',
+    screenshots: [],
+    github: '',
+    live: '',
+    status: 'Réalisé',
+  },
+  {
+    id: '09',
+    name: 'Getpai',
+    category: 'IA & Automatisation',
+    description: 'Consumer Data Platform — application de collecte et analyse intelligente des données consommateurs.',
+    longDescription: 'Platform de données consommateurs (CDP) intégrant des algorithmes d\'IA pour la collecte, le traitement et l\'analyse comportementale. Segmentation automatique, insights prédictifs et tableaux de bord en temps réel pour optimiser l\'expérience client.',
+    stack: ['React', 'Node.js', 'Python', 'Supabase'],
+    icon: '💰',
+    screenshots: [],
+    github: '',
+    live: '',
+    status: 'En développement',
+  },
+  {
+    id: '10',
+    name: 'Portfolio Windows XP',
+    category: 'Développement Web',
+    description: 'Ce portfolio ! Interface Windows XP émulée avec React 18 + Framer Motion',
+    longDescription: 'Portfolio personnel ultra-immersif simulant l\'environnement Windows XP dans le navigateur. Développé avec React 18, TypeScript strict, Framer Motion v11 et Zustand. Fenêtres draggables, sons authentiques, easter eggs cachés.',
+    stack: ['React 18', 'TypeScript', 'Framer Motion', 'Zustand', 'Tailwind CSS', 'Vite'],
+    icon: '🖥️',
+    screenshots: [],
+    status: 'Production',
+  },
+];
+
+export const getProjectsByCategory = (category: ProjectCategory): Project[] =>
+  projects.filter((p) => p.category === category);
+
+export const getProjectById = (id: string): Project | undefined =>
+  projects.find((p) => p.id === id);

@@ -1,0 +1,363 @@
+/* Windows XP Luna Theme - Authentic CSS Variables */
+:root {
+  --xp-blue-dark:        #0A246A;
+  --xp-blue-mid:         #2048C8;
+  --xp-blue-title:       #0054E3;
+  --xp-title-gradient:   linear-gradient(180deg, #0054E3 0%, #2563EB 50%, #1040C0 100%);
+  --xp-taskbar-bg:       #245EDC;
+  --xp-taskbar-gradient: linear-gradient(180deg, #3A6BE3 0%, #1A4FC4 100%);
+  --xp-start-green:      #3C9B3C;
+  --xp-start-gradient:   linear-gradient(90deg, #54B054 0%, #3C9B3C 100%);
+  --xp-window-bg:        #ECE9D8;
+  --xp-window-border:    #0054E3;
+  --xp-btn-face:         #EFF0F1;
+  --xp-btn-shadow:       #808080;
+  --xp-btn-highlight:    #FFFFFF;
+  --xp-selected-blue:    #2F6FBF;
+  --xp-selected-text:    #FFFFFF;
+  --xp-tooltip-bg:       #FFFFE1;
+  --xp-tooltip-border:   #000000;
+  --xp-desktop-bg:       #5A7EBF;
+  --xp-icon-text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+  --xp-font:             'Tahoma', 'Arial', sans-serif;
+  --xp-font-size-xs:     11px;
+  --xp-font-size-sm:     12px;
+  --xp-font-size-md:     13px;
+  --xp-font-size-lg:     16px;
+  --xp-btn-3d:           inset -1px -1px 0 #808080, inset 1px 1px 0 #FFFFFF;
+  --xp-btn-3d-pressed:   inset 1px 1px 0 #808080, inset -1px -1px 0 #FFFFFF;
+  --xp-window-shadow:    4px 4px 10px rgba(0,0,0,0.5);
+  --xp-progress-bar:     linear-gradient(180deg, #2B8ADE 0%, #1B68C0 50%, #2B8ADE 100%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--xp-font);
+  font-size: var(--xp-font-size-md);
+  overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* XP Button Base */
+.xp-btn {
+  font-family: var(--xp-font);
+  font-size: var(--xp-font-size-sm);
+  background: var(--xp-btn-face);
+  border: 1px solid var(--xp-btn-shadow);
+  box-shadow: var(--xp-btn-3d);
+  padding: 3px 12px;
+  cursor: pointer;
+  min-width: 75px;
+  height: 23px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.xp-btn:active {
+  box-shadow: var(--xp-btn-3d-pressed);
+}
+
+.xp-btn:focus {
+  outline: 1px dotted #000;
+  outline-offset: -3px;
+}
+
+/* XP Window Chrome */
+.xp-window {
+  background: var(--xp-window-bg);
+  border: 2px solid var(--xp-window-border);
+  box-shadow: var(--xp-window-shadow);
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+}
+
+.xp-titlebar {
+  background: var(--xp-title-gradient);
+  height: 28px;
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.xp-titlebar-title {
+  color: white;
+  font-size: var(--xp-font-size-sm);
+  font-weight: bold;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+}
+
+/* Title bar buttons */
+.xp-titlebar-btn {
+  width: 21px;
+  height: 21px;
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: bold;
+  color: white;
+  flex-shrink: 0;
+}
+
+.xp-titlebar-btn-minimize {
+  background: linear-gradient(180deg, #4A90D9 0%, #2B6CC4 100%);
+}
+
+.xp-titlebar-btn-maximize {
+  background: linear-gradient(180deg, #4A90D9 0%, #2B6CC4 100%);
+}
+
+.xp-titlebar-btn-close {
+  background: linear-gradient(180deg, #E05050 0%, #C03030 100%);
+}
+
+.xp-titlebar-btn:hover {
+  filter: brightness(1.15);
+}
+
+.xp-titlebar-btn:active {
+  filter: brightness(0.9);
+}
+
+/* XP Scrollbar */
+::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F0F0EE;
+  border: 1px solid #ACA899;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #D4D0C8 0%, #B8B4AA 100%);
+  border: 1px solid #808080;
+  box-shadow: inset 1px 1px 0 #FFFFFF;
+}
+
+::-webkit-scrollbar-button {
+  background: #D4D0C8;
+  border: 1px solid #808080;
+  width: 16px;
+  height: 16px;
+}
+
+/* XP Progress bar */
+.xp-progress-bar {
+  background: var(--xp-progress-bar);
+  border: 1px solid var(--xp-window-border);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.3);
+  height: 100%;
+  border-radius: 0;
+}
+
+.xp-progress-container {
+  background: #FFFFFF;
+  border: 1px solid #7F9DB9;
+  box-shadow: inset 1px 1px 0 #808080;
+  height: 16px;
+  overflow: hidden;
+}
+
+/* XP Menu */
+.xp-menu {
+  background: var(--xp-window-bg);
+  border: 1px solid var(--xp-btn-shadow);
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  min-width: 160px;
+  padding: 2px;
+}
+
+.xp-menu-item {
+  font-family: var(--xp-font);
+  font-size: var(--xp-font-size-sm);
+  padding: 4px 20px 4px 24px;
+  cursor: pointer;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.xp-menu-item:hover {
+  background: var(--xp-selected-blue);
+  color: var(--xp-selected-text);
+}
+
+.xp-menu-separator {
+  border-top: 1px solid #ACA899;
+  margin: 2px 0;
+}
+
+/* XP Tooltip */
+.xp-tooltip {
+  background: var(--xp-tooltip-bg);
+  border: 1px solid var(--xp-tooltip-border);
+  font-family: var(--xp-font);
+  font-size: var(--xp-font-size-xs);
+  padding: 3px 6px;
+  pointer-events: none;
+  white-space: nowrap;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+/* Loading dots XP */
+.xp-loading-dot {
+  width: 10px;
+  height: 10px;
+  background: #2B8ADE;
+  border-radius: 1px;
+}
+
+/* Desktop icon */
+.xp-desktop-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 72px;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 2px;
+}
+
+.xp-desktop-icon-label {
+  color: white;
+  font-family: var(--xp-font);
+  font-size: var(--xp-font-size-xs);
+  text-align: center;
+  text-shadow: var(--xp-icon-text-shadow);
+  word-break: break-word;
+  line-height: 1.2;
+  max-width: 72px;
+}
+
+.xp-desktop-icon.selected .xp-desktop-icon-label {
+  background: var(--xp-selected-blue);
+  color: var(--xp-selected-text);
+}
+
+/* Taskbar button */
+.xp-taskbar-btn {
+  height: 26px;
+  max-width: 160px;
+  min-width: 80px;
+  background: linear-gradient(180deg, #3B6CC7 0%, #2855A8 100%);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+  font-family: var(--xp-font);
+  font-size: var(--xp-font-size-xs);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 6px;
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  border-radius: 3px;
+}
+
+.xp-taskbar-btn.active {
+  background: linear-gradient(180deg, #1A3A8A 0%, #2048C8 100%);
+  box-shadow: inset 1px 1px 0 rgba(0,0,0,0.3);
+  font-weight: bold;
+}
+
+/* Input XP style */
+.xp-input {
+  font-family: var(--xp-font);
+  font-size: var(--xp-font-size-sm);
+  border: 1px solid #7F9DB9;
+  box-shadow: inset 1px 1px 2px rgba(0,0,0,0.2);
+  background: white;
+  padding: 3px 4px;
+  outline: none;
+}
+
+.xp-input:focus {
+  border-color: var(--xp-selected-blue);
+}
+
+/* Resize handle */
+.xp-resize-handle {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 16px;
+  height: 16px;
+  cursor: se-resize;
+  background: linear-gradient(135deg, transparent 50%, #808080 50%, #808080 56%, transparent 56%, transparent 62%, #808080 62%, #808080 68%, transparent 68%, transparent 74%, #808080 74%, #808080 80%, transparent 80%);
+}
+
+/* Badge pill for tech stack */
+.xp-badge {
+  background: var(--xp-btn-face);
+  border: 1px solid var(--xp-btn-shadow);
+  box-shadow: var(--xp-btn-3d);
+  font-family: var(--xp-font);
+  font-size: var(--xp-font-size-xs);
+  padding: 2px 8px;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+/* Tab XP */
+.xp-tab {
+  font-family: var(--xp-font);
+  font-size: var(--xp-font-size-sm);
+  background: var(--xp-btn-face);
+  border: 1px solid var(--xp-btn-shadow);
+  border-bottom: none;
+  padding: 3px 10px;
+  cursor: pointer;
+  margin-right: 2px;
+  position: relative;
+  top: 1px;
+}
+
+.xp-tab.active {
+  background: var(--xp-window-bg);
+  font-weight: bold;
+  z-index: 1;
+  border-bottom: 1px solid var(--xp-window-bg);
+}
+
+/* Dialog box */
+.xp-dialog-overlay {
+  position: fixed;
+  inset: 0;
+  background: transparent;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.xp-dialog {
+  background: var(--xp-window-bg);
+  border: 2px solid var(--xp-window-border);
+  box-shadow: var(--xp-window-shadow);
+  min-width: 280px;
+  max-width: 400px;
+}
