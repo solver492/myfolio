@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "publish:dist": "npm run build && git add -A dist && (git diff --cached --quiet || git commit -q -m \"build: regenere dist\") && git subtree split --prefix=dist -b deploy -q && git push origin main deploy"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",
