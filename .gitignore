@@ -8,7 +8,10 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-dist
+*.tsbuildinfo
+# dist est versionne : l'auto-deploy Hostinger sert le contenu du repo tel quel,
+# sans etape de build. Retirer cette ligne casse le deploiement.
+!dist
 dist-ssr
 *.local
 
